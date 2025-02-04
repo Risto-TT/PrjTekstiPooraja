@@ -4,7 +4,7 @@
     ' Klassi TekstiPooraja attribuudid (muutujad)
     Private AlgusSymbol As Integer
     Private LoppSymbol As Integer
-    Private PooratavTekst As Integer
+    Private PooratavTekst As String
 
     ' Atribuut EsimeseTaheAsciiKood seadistamine
     Private Property EsimeseTaheAsciiKood As Integer Implements ITeisendaja.EsimeseTaheAsciiKood
