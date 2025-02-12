@@ -103,10 +103,15 @@
             LblAscii.Text = String.Format("[ {0, 3} | {1, 3} ]", pooraja.EsimeseTaheAsciiKood, pooraja.ViimaseTaheAsciiKood)
 
         Else
-            LblAscii.Text = "[ - | - ]"
+            LblAscii.Text = "[  -  |  -  ]"
         End If
 
         LblPikkus.Text = "Pikkus: " + txtSisendTekst.Text.Length.ToString
     End Sub
 
+    Private Sub FormKasutajaAken_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LblAscii.Text = "[  -  |  -  ]"
+        txtValjundTekst1.ReadOnly = True
+        txtValjundTekst2.ReadOnly = True
+    End Sub
 End Class
