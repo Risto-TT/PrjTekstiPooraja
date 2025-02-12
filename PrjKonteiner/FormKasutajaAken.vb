@@ -86,6 +86,26 @@
     End Sub
 
     Private Sub txtSisendTekst_TextChanged(sender As Object, e As EventArgs) Handles txtSisendTekst.TextChanged
+        ' Objekti loomine liidese baasil; referentsmuutuja pooraja deklaratsioon
+        Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
+
+        ' Seadistame referentsmuutuja viitama uuele objektile
+        pooraja = New PrjTekstiPoorajaKomponent.TekstiOmadused
+
+        pooraja.ProcessASCII(txtSisendTekst.Text)
+
+
+
+        LblTaisHaalik.Text = "Täish " + pooraja.GetVowelCount.ToString
+
+        If txtSisendTekst.Text.Length > 0 Then
+            'LblAscii.Text = "[ " + pooraja.EsimeseTaheAsciiKood.ToString + " | " + pooraja.ViimaseTaheAsciiKood.ToString + "]"
+            LblAscii.Text = String.Format("[ {0, 3} | {1, 3} ]", pooraja.EsimeseTaheAsciiKood, pooraja.ViimaseTaheAsciiKood)
+
+        Else
+            LblAscii.Text = "[ - | - ]"
+        End If
+
         LblPikkus.Text = "Pikkus: " + txtSisendTekst.Text.Length.ToString
     End Sub
 

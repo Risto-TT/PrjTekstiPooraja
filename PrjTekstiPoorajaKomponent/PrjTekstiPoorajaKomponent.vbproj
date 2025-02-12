@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="AlgoritmilineTekstiPooraja.vb" />
     <Compile Include="ITeisendaja.vb" />
+    <Compile Include="TekstiOmadused.vb" />
     <Compile Include="TekstiPooraja.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

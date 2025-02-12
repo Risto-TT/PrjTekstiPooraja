@@ -5,5 +5,10 @@
 
     Function PooraTekst() As String          ' Liidese meetodid koodi ei oma
     Sub TeisendaTekst(ByRef sisendTekst As String)
+
+    Function GetVowelCount() As Integer
+
+    Sub ProcessASCII(ByRef sisendTekst As String)
+
 End Interface
 

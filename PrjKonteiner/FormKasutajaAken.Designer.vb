@@ -37,6 +37,8 @@ Partial Class FormKasutajaAken
         Me.LblPikkus = New System.Windows.Forms.Label()
         Me.TimerUuenduseni = New System.Windows.Forms.Timer(Me.components)
         Me.ChkAlgoritmiline = New System.Windows.Forms.CheckBox()
+        Me.LblAscii = New System.Windows.Forms.Label()
+        Me.LblTaisHaalik = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtSisendTekst
@@ -162,11 +164,33 @@ Partial Class FormKasutajaAken
         Me.ChkAlgoritmiline.Text = "Algoritmiline pööraja"
         Me.ChkAlgoritmiline.UseVisualStyleBackColor = True
         '
+        'LblAscii
+        '
+        Me.LblAscii.AutoSize = True
+        Me.LblAscii.Location = New System.Drawing.Point(602, 102)
+        Me.LblAscii.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblAscii.Name = "LblAscii"
+        Me.LblAscii.Size = New System.Drawing.Size(102, 20)
+        Me.LblAscii.TabIndex = 12
+        Me.LblAscii.Text = "ASCII: [ - :  - ]"
+        '
+        'LblTaisHaalik
+        '
+        Me.LblTaisHaalik.AutoSize = True
+        Me.LblTaisHaalik.Location = New System.Drawing.Point(602, 142)
+        Me.LblTaisHaalik.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblTaisHaalik.Name = "LblTaisHaalik"
+        Me.LblTaisHaalik.Size = New System.Drawing.Size(64, 20)
+        Me.LblTaisHaalik.TabIndex = 13
+        Me.LblTaisHaalik.Text = "Täish: 0"
+        '
         'FormKasutajaAken
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(706, 448)
+        Me.ClientSize = New System.Drawing.Size(717, 392)
+        Me.Controls.Add(Me.LblTaisHaalik)
+        Me.Controls.Add(Me.LblAscii)
         Me.Controls.Add(Me.ChkAlgoritmiline)
         Me.Controls.Add(Me.LblPikkus)
         Me.Controls.Add(Me.btnStop)
@@ -201,4 +225,6 @@ Partial Class FormKasutajaAken
     Friend WithEvents LblPikkus As Label
     Friend WithEvents TimerUuenduseni As Timer
     Friend WithEvents ChkAlgoritmiline As CheckBox
+    Friend WithEvents LblAscii As Label
+    Friend WithEvents LblTaisHaalik As Label
 End Class

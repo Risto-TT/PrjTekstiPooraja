@@ -1,5 +1,6 @@
-﻿Public Class AlgoritmilineTekstiPooraja
+﻿Public Class TekstiOmadused
     Implements ITeisendaja
+
 
     ' Klassi TekstiPooraja attribuudid (muutujad)
     Private AlgusSymbol As Integer
@@ -36,33 +37,38 @@
         End Set
     End Property
 
-    Public Sub ProcessASCII(ByRef sisendTekst As String) Implements ITeisendaja.ProcessASCII
+    Public Sub TeisendaTekst(ByRef sisendTekst As String) Implements ITeisendaja.TeisendaTekst
         Throw New NotImplementedException()
     End Sub
 
-    ' Meetod võtab parameetrina edastatud sõne, pöörab
-    ' selle tagurpidi ning salvestab atribuuti PooratavTekst
-    Private Sub TeisendaTekst(ByRef sisendTekst As String) _
-        Implements ITeisendaja.TeisendaTekst
-
-        For Each ch In sisendTekst
-            PooratavTekst = ch + PooratavTekst
-        Next
-
-
-    End Sub
+    Public Function PooraTekst() As String Implements ITeisendaja.PooraTekst
+        Throw New NotImplementedException()
+    End Function
 
     Public Function GetVowelCount() As Integer Implements ITeisendaja.GetVowelCount
-        Throw New NotImplementedException()
+        Dim VowelCount As Integer = 0
+        Dim Vowels As String = "aeiouöäüõ"
+
+        For Each ch In PooratavTekst.ToLower
+
+            If Vowels.Contains(ch) Then
+                VowelCount += 1
+            End If
+        Next
+        Return VowelCount
     End Function
 
-    ' Meetod võtab atribuudist PooratavTekst väärtuse, 
-    ' pöörab selle tagurpidi ja tagastab selle
-    Private Function PooraTekst() As String Implements ITeisendaja.PooraTekst
-        Dim ans As String = ""
-        For Each ch In PooratavTekst
-            ans = ch + ans
-        Next
-        Return ans
-    End Function
+    Public Sub ProcessASCII(ByRef sisendTekst As String) Implements ITeisendaja.ProcessASCII
+
+        PooratavTekst = sisendTekst
+
+        If (sisendTekst.Length < 1) Then
+            Exit Sub
+        Else
+            EsimeseTaheAsciiKood = Asc(sisendTekst(0))
+            ViimaseTaheAsciiKood = Asc(sisendTekst(sisendTekst.Length - 1))
+        End If
+
+    End Sub
+
 End Class
