@@ -6,7 +6,12 @@
         Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
 
         ' Seadistame referentsmuutuja viitama uuele objektile
-        pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja
+        If ChkAlgoritmiline.Checked Then
+            pooraja = New PrjTekstiPoorajaKomponent.AlgoritmilineTekstiPooraja
+        Else
+            pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja
+        End If
+
 
         ' Teostame teksti pööramise kasutades parametriseerimata funktsiooni pooraTekst 
         ' ning liidese atribuuti strTekst
@@ -26,7 +31,11 @@
         Dim pooraja As PrjTekstiPoorajaKomponent.ITeisendaja
 
         ' Seadistame referentsmuutuja viitama uuele objektile
-        pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja
+        If ChkAlgoritmiline.Checked Then
+            pooraja = New PrjTekstiPoorajaKomponent.AlgoritmilineTekstiPooraja
+        Else
+            pooraja = New PrjTekstiPoorajaKomponent.TekstiPooraja
+        End If
 
         ' Teostame teksti pööramise kasutades parametriseeritud protseduuri teisendatekst() 
         ' ning liidese atribuuti strTekst
